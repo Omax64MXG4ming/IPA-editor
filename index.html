@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EditIPA - editor for iOS application packages</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main>
+    <div class="main-content">
+      <h1 class="text-effect">EditIPA</h1>
+      <p class="text-large">
+        A simple tool to edit IPAs directly in browser<br />
+        Edit name, icon, version, identifier, etc., or any other key<br />
+        just upload your IPA and start editing
+      </p>
+    </div>
+    <div class="upload-section">
+      <input type="file" id="file-upload" class="file-input" accept="application/octet-stream,application/x-zip-compressed" style="display: none;" onchange="handleFileUpload(event)" />
+      <button id="upload-button" class="btn" onclick="document.getElementById('file-upload').click();">
+        Upload IPA<span id="loader" class="loader hidden"></span>
+      </button>
+    </div>
+    <div class="editorDiv">
+      <h2 class="text-effect editTitle">Editor</h2>
+      <p id="placeholder" class="editPlaceholder">Upload IPA to start the editor</p>
+      <p id="editProcessStatus" class="text-effect hidden"></p>
+      <span id="editorLoader" class="loader hidden"></span>
+      <form id="plist-form" class="hidden">
+        <div class="editBody">
+          <div class="editEntry">
+            <!--
+            <div id="app-icon-container" class="squircle-container">
+              <svg viewBox="0 0 100 100">
+                <defs>
+                  <clipPath id="squircle-clip" clipPathUnits="objectBoundingBox">
+                    <path d="M .5 0 C .1 0 0 .1 0 .5 0 .9 .1 1 .5 1 .9 1 1 .9 1 .5 1 .1 .9 0 .5 0 Z" />
+                  </clipPath>
+                </defs>
+                <image id="app-icon" x="0" y="0" width="100" height="100" clip-path="url(#squircle-clip)" />
+              </svg>
+            </div>
+            -->
+            <image id="app-icon" width="100px" height="100px" src="" />
+          </div>
+          <div class="form-group">
+            <label for="display-name">Display Name (CFBundleDisplayName)</label>
+            <input type="text" id="display-name" class="form-control" oninvalid="this.setCustomValidity('This field is required.')" oninput="this.setCustomValidity('')" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="bundle-identifier">Bundle Identifier (CFBundleIdentifier)</label>
+          <input type="text" id="bundle-identifier" class="form-control" pattern="[a-zA-Z0-9-._]+" required oninvalid="this.setCustomValidity('Only alphanumeric characters, dots, hyphens, and underscores are allowed.')" oninput="this.setCustomValidity('')" />
+        </div>
+        <div class="form-group">
+          <label for="bundle-name">Bundle Name (CFBundleName)</label>
+          <input type="text" id="bundle-name" class="form-control" required oninvalid="this.setCustomValidity('This field is required.')" oninput="this.setCustomValidity('')" />
+        </div>
+
+        <div class="form-group">
+          <label for="bundle-version">Bundle Version (CFBundleVersion)</label>
+          <input type="text" id="bundle-version" class="form-control" pattern="\d+(\.\d+)*" required oninvalid="this.setCustomValidity('Version should be in the format x.x.x where x is a number.')" oninput="this.setCustomValidity('')" />
+        </div>
+        <div class="form-group">
+          <label for="short-version-string">Short Version String (CFBundleShortVersionString)</label>
+          <input type="text" id="short-version-string" class="form-control" pattern="\d+(\.\d+)*" required oninvalid="this.setCustomValidity('Version should be in the format x.x.x where x is a number.')" oninput="this.setCustomValidity('')" />
+        </div>
+        <div class="form-group">
+          <label for="min-ios-version">Minimum iOS Version (MinimumOSVersion)</label>
+          <input type="text" id="min-ios-version" class="form-control" pattern="\d+(\.\d+)*" required oninvalid="this.setCustomValidity('Version should be in the format x.x.x where x is a number.')" onblur="formatVersionInput()" oninput="this.setCustomValidity('');" />
+        </div>
+        <div class="form-group">
+
+          <input type="checkbox" id="file-access" class="checkbox" name="file-access">
+          <label for="file-access"><span class="switch"></span>Supports Files App<span class="label-small">Enables document access</span></label>
+        </div>
+        <button type="submit" class="btn submitBtn">Submit</button>
+    </div>
+    </form>
+    </div>
+  </main>
+  <script src="build/main.js"></script>
+</body>
+
+</html>
