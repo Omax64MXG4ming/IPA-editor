@@ -22,7 +22,7 @@ IPA are application packages for ios apps just like android has apk as their app
 - A somewhat modern web browser with JavaScript enabled.
 
 ### Usage
-1. Visit the [EditIPA website](https://JagritThukral.github.io/EditIPA).
+1. Visit the [IPA Editor website](https://omax64mxg4ming.github.io/IPA-editor/).
 2. **Upload IPA**: Click the "Upload IPA" button and select your IPA file.
 3. **Edit Properties**: Once the IPA is uploaded, use the form to edit  properties in Basic Mode
 
@@ -45,4 +45,4 @@ This project is licensed under the MIT License.
 
 ---
 
-Enjoy editing your IPAs with **EditIPA**!
+Enjoy editing your IPAs with **IPA EDITOR**!
