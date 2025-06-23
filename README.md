@@ -43,6 +43,24 @@ This project is licensed under the MIT License.
 - Thanks to the creators of [JSZip](https://stuk.github.io/jszip/)  [@plist/plist](https://www.npmjs.com/package/@plist/plist) [FileSaver.js](https://github.com/eligrey/FileSaver.js/) for their awesome libraries.
 
 
+# Install .ipa File
+Most Viable Way [Alt Store](https://altstore.io/)
+Reliable and easy-to-use installer.
+
+Allows you to install .ipa files from your computer to your iPhone.
+
+Works without jailbreak.
+
+Requirements:
+
+PC/Mac with AltServer.
+
+USB cable or Wi-Fi.
+
+Apple ID (not saved)
+
+...
+
 ---
 
 Enjoy editing your IPAs with **IPA EDITOR**!
